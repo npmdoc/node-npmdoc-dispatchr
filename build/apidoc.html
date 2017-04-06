@@ -1,0 +1,1055 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/yahoo/fluxible#readme"
+
+    >dispatchr (v1.1.1)</a>
+</h1>
+<h4>A Flux dispatcher for applications that run on the server and the client.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dispatchr">module dispatchr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.Action">
+            function <span class="apidocSignatureSpan">dispatchr.</span>Action
+            <span class="apidocSignatureSpan">(name, payload)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.BaseStore">
+            function <span class="apidocSignatureSpan">dispatchr.</span>BaseStore
+            <span class="apidocSignatureSpan">(dispatcher)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.DispatcherContext">
+            function <span class="apidocSignatureSpan">dispatchr.</span>DispatcherContext
+            <span class="apidocSignatureSpan">(dispatcher, context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.createDispatcher">
+            function <span class="apidocSignatureSpan">dispatchr.</span>createDispatcher
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dispatchr.</span>Action.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dispatchr.</span>BaseStore.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dispatchr.</span>DispatcherContext.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dispatchr.Action">module dispatchr.Action</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.Action.Action">
+            function <span class="apidocSignatureSpan">dispatchr.</span>Action
+            <span class="apidocSignatureSpan">(name, payload)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dispatchr.Action.prototype">module dispatchr.Action.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.Action.prototype._callHandler">
+            function <span class="apidocSignatureSpan">dispatchr.Action.prototype.</span>_callHandler
+            <span class="apidocSignatureSpan">(storeName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.Action.prototype.execute">
+            function <span class="apidocSignatureSpan">dispatchr.Action.prototype.</span>execute
+            <span class="apidocSignatureSpan">(handlers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.Action.prototype.getStoreName">
+            function <span class="apidocSignatureSpan">dispatchr.Action.prototype.</span>getStoreName
+            <span class="apidocSignatureSpan">(store)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.Action.prototype.waitFor">
+            function <span class="apidocSignatureSpan">dispatchr.Action.prototype.</span>waitFor
+            <span class="apidocSignatureSpan">(stores, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dispatchr.BaseStore">module dispatchr.BaseStore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.BaseStore.BaseStore">
+            function <span class="apidocSignatureSpan">dispatchr.</span>BaseStore
+            <span class="apidocSignatureSpan">(dispatcher)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.BaseStore.super_">
+            function <span class="apidocSignatureSpan">dispatchr.BaseStore.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dispatchr.BaseStore.prototype">module dispatchr.BaseStore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.BaseStore.prototype.addChangeListener">
+            function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>addChangeListener
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.BaseStore.prototype.emitChange">
+            function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>emitChange
+            <span class="apidocSignatureSpan">(param)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.BaseStore.prototype.getContext">
+            function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>getContext
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.BaseStore.prototype.removeChangeListener">
+            function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>removeChangeListener
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.BaseStore.prototype.shouldDehydrate">
+            function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>shouldDehydrate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dispatchr.DispatcherContext">module dispatchr.DispatcherContext</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.DispatcherContext.DispatcherContext">
+            function <span class="apidocSignatureSpan">dispatchr.</span>DispatcherContext
+            <span class="apidocSignatureSpan">(dispatcher, context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dispatchr.DispatcherContext.prototype">module dispatchr.DispatcherContext.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.DispatcherContext.prototype.dehydrate">
+            function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>dehydrate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.DispatcherContext.prototype.dispatch">
+            function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>dispatch
+            <span class="apidocSignatureSpan">(actionName, payload)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.DispatcherContext.prototype.getStore">
+            function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>getStore
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.DispatcherContext.prototype.rehydrate">
+            function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>rehydrate
+            <span class="apidocSignatureSpan">(dispatcherState)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.DispatcherContext.prototype.waitFor">
+            function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>waitFor
+            <span class="apidocSignatureSpan">(stores, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dispatchr" id="apidoc.module.dispatchr">module dispatchr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.Action" id="apidoc.element.dispatchr.Action">
+        function <span class="apidocSignatureSpan">dispatchr.</span>Action
+        <span class="apidocSignatureSpan">(name, payload)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Action(name, payload) {
+    this.name = name;
+    this.payload = payload;
+    this._handlers = null;
+    this._isExecuting = false;
+    this._isCompleted = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.BaseStore" id="apidoc.element.dispatchr.BaseStore">
+        function <span class="apidocSignatureSpan">dispatchr.</span>BaseStore
+        <span class="apidocSignatureSpan">(dispatcher)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BaseStore(dispatcher) {
+    this.dispatcher = dispatcher;
+    this._hasChanged = false;
+    EventEmitter.call(this);
+    if (this.initialize) {
+        this.initialize();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.DispatcherContext" id="apidoc.element.dispatchr.DispatcherContext">
+        function <span class="apidocSignatureSpan">dispatchr.</span>DispatcherContext
+        <span class="apidocSignatureSpan">(dispatcher, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DispatcherContext(dispatcher, context) {
+    this.context = context;
+    this.dispatcher = dispatcher;
+    this.storeInstances = {};
+    this.currentAction = null;
+    this.dispatcherInterface = {
+        getContext: function getContext() { return context; },
+        getStore: this.getStore.bind(this),
+        waitFor: this.waitFor.bind(this)
+    };
+    this.rehydratedStoreState = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.createDispatcher" id="apidoc.element.dispatchr.createDispatcher">
+        function <span class="apidocSignatureSpan">dispatchr.</span>createDispatcher
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createDispatcher = function (options) {
+    return new Dispatcher(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Usage
+
+For a more detailed example, see our [example applications](../../examples).
+
+```js
+var ExampleStore = require(&#x27;./stores/ExampleStore.js&#x27;);
+var dispatcher = require(&#x27;dispatchr&#x27;).<span class="apidocCodeKeywordSpan">createDispatcher</span>({
+    stores: [ExampleStore]
+});
+
+var contextOptions = {};
+var dispatcherContext = dispatcher.createContext(contextOptions);
+
+dispatcherContext.dispatch(&#x27;NAVIGATE&#x27;, {});
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dispatchr.Action" id="apidoc.module.dispatchr.Action">module dispatchr.Action</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.Action.Action" id="apidoc.element.dispatchr.Action.Action">
+        function <span class="apidocSignatureSpan">dispatchr.</span>Action
+        <span class="apidocSignatureSpan">(name, payload)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Action(name, payload) {
+    this.name = name;
+    this.payload = payload;
+    this._handlers = null;
+    this._isExecuting = false;
+    this._isCompleted = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dispatchr.Action.prototype" id="apidoc.module.dispatchr.Action.prototype">module dispatchr.Action.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.Action.prototype._callHandler" id="apidoc.element.dispatchr.Action.prototype._callHandler">
+        function <span class="apidocSignatureSpan">dispatchr.Action.prototype.</span>_callHandler
+        <span class="apidocSignatureSpan">(storeName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function callHandler(storeName) {
+    var self = this,
+        handlerFn = self._handlers[storeName];
+    if (!handlerFn) {
+        throw new Error(storeName + &#x27; does not have a handler for action &#x27; + self.name);
+    }
+    if (self._isCompleted[storeName]) {
+        return;
+    }
+    self._isCompleted[storeName] = false;
+    debug(&#x27;executing handler for &#x27; + storeName);
+    handlerFn(self.payload, self.name);
+    self._isCompleted[storeName] = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+       throw new Error(&#x27;Action is already dispatched&#x27;);
+   }
+   var self = this;
+   this._handlers = handlers;
+   this._isExecuting = true;
+   this._isCompleted = {};
+   Object.keys(handlers).forEach(function handlersEach(storeName) {
+       self.<span class="apidocCodeKeywordSpan">_callHandler</span>(storeName);
+   });
+};
+
+/**
+* Calls an individual store&#x27;s handler function
+* @method _callHandler
+* @param {String} storeName
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.Action.prototype.execute" id="apidoc.element.dispatchr.Action.prototype.execute">
+        function <span class="apidocSignatureSpan">dispatchr.Action.prototype.</span>execute
+        <span class="apidocSignatureSpan">(handlers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function execute(handlers) {
+    if (this._isExecuting) {
+        throw new Error(&#x27;Action is already dispatched&#x27;);
+    }
+    var self = this;
+    this._handlers = handlers;
+    this._isExecuting = true;
+    this._isCompleted = {};
+    Object.keys(handlers).forEach(function handlersEach(storeName) {
+        self._callHandler(storeName);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                        store: store
+                    };
+                    return self.dispatcher._throwOrCallErrorHandler(message, &#x27;DISPATCH_INVALID_STORE_METHOD&#x27;, self.context
+, meta);
+                }
+                handlerFns[store.name] = storeInstance[store.handler].bind(storeInstance);
+            }
+        });
+        this.currentAction.<span class="apidocCodeKeywordSpan">execute</span>(handlerFns);
+    } catch (e) {
+        throw e;
+    } finally {
+        debug(&#x27;finished &#x27; + actionName);
+        this.currentAction = null;
+    }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.Action.prototype.getStoreName" id="apidoc.element.dispatchr.Action.prototype.getStoreName">
+        function <span class="apidocSignatureSpan">dispatchr.Action.prototype.</span>getStoreName
+        <span class="apidocSignatureSpan">(store)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getStoreName(store) {
+    if (&#x27;string&#x27; === typeof store) {
+        return store;
+    }
+    return store.storeName;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+    if (!Array.isArray(stores)) {
+        stores = [stores];
+    }
+
+    debug(&#x27;waiting on &#x27; + stores.join(&#x27;, &#x27;));
+    stores.forEach(function storesEach(storeName) {
+        storeName = self.<span class="apidocCodeKeywordSpan">getStoreName</span>(storeName);
+        if (self._handlers[storeName]) {
+            self._callHandler(storeName);
+        }
+    });
+
+    callback();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.Action.prototype.waitFor" id="apidoc.element.dispatchr.Action.prototype.waitFor">
+        function <span class="apidocSignatureSpan">dispatchr.Action.prototype.</span>waitFor
+        <span class="apidocSignatureSpan">(stores, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function waitFor(stores, callback) {
+    var self = this;
+    if (!self._isExecuting) {
+        throw new Error(&#x27;waitFor called even though there is no action being executed!&#x27;);
+    }
+    if (!Array.isArray(stores)) {
+        stores = [stores];
+    }
+
+    debug(&#x27;waiting on &#x27; + stores.join(&#x27;, &#x27;));
+    stores.forEach(function storesEach(storeName) {
+        storeName = self.getStoreName(storeName);
+        if (self._handlers[storeName]) {
+            self._callHandler(storeName);
+        }
+    });
+
+    callback();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (!this.currentAction) {
+        var message = &#x27;waitFor called even though there is no action dispatching&#x27;;
+        var meta = {
+            stores: stores
+        };
+        return this.dispatcher._throwOrCallErrorHandler(message, &#x27;WAITFOR_NO_ACTION&#x27;, this.context, meta);
+    }
+    this.currentAction.<span class="apidocCodeKeywordSpan">waitFor</span>(stores, callback);
+};
+
+module.exports = DispatcherContext;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dispatchr.BaseStore" id="apidoc.module.dispatchr.BaseStore">module dispatchr.BaseStore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.BaseStore.BaseStore" id="apidoc.element.dispatchr.BaseStore.BaseStore">
+        function <span class="apidocSignatureSpan">dispatchr.</span>BaseStore
+        <span class="apidocSignatureSpan">(dispatcher)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BaseStore(dispatcher) {
+    this.dispatcher = dispatcher;
+    this._hasChanged = false;
+    EventEmitter.call(this);
+    if (this.initialize) {
+        this.initialize();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.BaseStore.super_" id="apidoc.element.dispatchr.BaseStore.super_">
+        function <span class="apidocSignatureSpan">dispatchr.BaseStore.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  this._events = new Events();
+  this._eventsCount = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dispatchr.BaseStore.prototype" id="apidoc.module.dispatchr.BaseStore.prototype">module dispatchr.BaseStore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.BaseStore.prototype.addChangeListener" id="apidoc.element.dispatchr.BaseStore.prototype.addChangeListener">
+        function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>addChangeListener
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addChangeListener(callback) {
+    this.on(CHANGE_EVENT, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.BaseStore.prototype.emitChange" id="apidoc.element.dispatchr.BaseStore.prototype.emitChange">
+        function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>emitChange
+        <span class="apidocSignatureSpan">(param)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function emitChange(param) {
+    this._hasChanged = true;
+    this.emit(CHANGE_EVENT, param || this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var BaseStore = require(&#x27;dispatchr/addons/BaseStore&#x27;);
+var MyStore = function (dispatcherInterface) {
+    BaseStore.apply(this, arguments);
+};
+inherits(MyStore, BaseStore);
+MyStore.storeName = &#x27;MyStore&#x27;;
+MyStore.handlers = {
+    &#x27;NAVIGATE&#x27;: function (payload) { ... this.<span class="apidocCodeKeywordSpan">emitChange</span>() ... }
+};
+MyStore.prototype.getFoo = function () { var context = this.getContext(), ... }
+module.exports = MyStore;
+```
+
+
+### createStore
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.BaseStore.prototype.getContext" id="apidoc.element.dispatchr.BaseStore.prototype.getContext">
+        function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>getContext
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getContext() {
+    return this.dispatcher.getContext();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    BaseStore.apply(this, arguments);
+};
+inherits(MyStore, BaseStore);
+MyStore.storeName = &#x27;MyStore&#x27;;
+MyStore.handlers = {
+    &#x27;NAVIGATE&#x27;: function (payload) { ... this.emitChange() ... }
+};
+MyStore.prototype.getFoo = function () { var context = this.<span class="apidocCodeKeywordSpan">getContext</span>(), ... }
+module.exports = MyStore;
+```
+
+
+### createStore
+
+`require(&#x27;dispatchr/addons/createStore&#x27;)` provides a helper function for
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.BaseStore.prototype.removeChangeListener" id="apidoc.element.dispatchr.BaseStore.prototype.removeChangeListener">
+        function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>removeChangeListener
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function removeChangeListener(callback) {
+    this.removeListener(CHANGE_EVENT, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.BaseStore.prototype.shouldDehydrate" id="apidoc.element.dispatchr.BaseStore.prototype.shouldDehydrate">
+        function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>shouldDehydrate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shouldDehydrate() {
+    return this._hasChanged;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @returns {Object} dehydrated dispatcher data
+ */
+DispatcherContext.prototype.dehydrate = function dehydrate() {
+var self = this,
+    stores = {};
+Object.keys(self.storeInstances).forEach(function storeInstancesEach(storeName) {
+    var store = self.storeInstances[storeName];
+    if (!store.dehydrate || (store.shouldDehydrate &#x26;&#x26; !store.<span class="apidocCodeKeywordSpan">shouldDehydrate</span
+>())) {
+        return;
+    }
+    stores[storeName] = store.dehydrate();
+});
+return {
+    stores: stores
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dispatchr.DispatcherContext" id="apidoc.module.dispatchr.DispatcherContext">module dispatchr.DispatcherContext</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.DispatcherContext.DispatcherContext" id="apidoc.element.dispatchr.DispatcherContext.DispatcherContext">
+        function <span class="apidocSignatureSpan">dispatchr.</span>DispatcherContext
+        <span class="apidocSignatureSpan">(dispatcher, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DispatcherContext(dispatcher, context) {
+    this.context = context;
+    this.dispatcher = dispatcher;
+    this.storeInstances = {};
+    this.currentAction = null;
+    this.dispatcherInterface = {
+        getContext: function getContext() { return context; },
+        getStore: this.getStore.bind(this),
+        waitFor: this.waitFor.bind(this)
+    };
+    this.rehydratedStoreState = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dispatchr.DispatcherContext.prototype" id="apidoc.module.dispatchr.DispatcherContext.prototype">module dispatchr.DispatcherContext.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.DispatcherContext.prototype.dehydrate" id="apidoc.element.dispatchr.DispatcherContext.prototype.dehydrate">
+        function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>dehydrate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dehydrate() {
+    var self = this,
+        stores = {};
+    Object.keys(self.storeInstances).forEach(function storeInstancesEach(storeName) {
+        var store = self.storeInstances[storeName];
+        if (!store.dehydrate || (store.shouldDehydrate &#x26;&#x26; !store.shouldDehydrate())) {
+            return;
+        }
+        stores[storeName] = store.dehydrate();
+    });
+    return {
+        stores: stores
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var self = this,
+        stores = {};
+    Object.keys(self.storeInstances).forEach(function storeInstancesEach(storeName) {
+        var store = self.storeInstances[storeName];
+        if (!store.dehydrate || (store.shouldDehydrate &#x26;&#x26; !store.shouldDehydrate())) {
+            return;
+        }
+        stores[storeName] = store.<span class="apidocCodeKeywordSpan">dehydrate</span>();
+    });
+    return {
+        stores: stores
+    };
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.DispatcherContext.prototype.dispatch" id="apidoc.element.dispatchr.DispatcherContext.prototype.dispatch">
+        function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>dispatch
+        <span class="apidocSignatureSpan">(actionName, payload)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dispatch(actionName, payload) {
+    if (!actionName) {
+        var message = &#x27;actionName parameter `&#x27; + actionName + &#x27;` is invalid.&#x27;;
+        return this.dispatcher._throwOrCallErrorHandler(message, &#x27;DISPATCH_INVALID_ACTIONNAME&#x27;, this.context);
+    }
+    if (this.currentAction) {
+        var message = &#x27;Cannot call dispatch while another dispatch is executing. Attempted to execute \&#x27;&#x27; + actionName + &#x27;\&#x27; but\&#x27;&#x27; + this.currentAction.name + &#x27;\&#x27; is already executing.&#x27;;
+        var meta = {
+            actionName: actionName,
+            payload: payload
+        };
+        return this.dispatcher._throwOrCallErrorHandler(message, &#x27;DISPATCH_EXECUTING&#x27;, this.context, meta);
+    }
+    var actionHandlers = this.dispatcher.handlers[actionName] || [],
+        defaultHandlers = this.dispatcher.handlers[DEFAULT] || [];
+    if (!actionHandlers.length &#x26;&#x26; !defaultHandlers.length) {
+        debug(actionName + &#x27; does not have any registered handlers&#x27;);
+        return;
+    }
+    debug(&#x27;dispatching &#x27; + actionName, payload);
+    this.currentAction = new Action(actionName, payload);
+    var self = this,
+        allHandlers = actionHandlers.concat(defaultHandlers),
+        handlerFns = {};
+
+    try {
+        allHandlers.forEach(function actionHandlersEach(store) {
+            if (handlerFns[store.name]) {
+                // Don&#x27;t call the default if the store has an explicit action handler
+                return;
+            }
+            var storeInstance = self.getStore(store.name);
+            if (&#x27;function&#x27; === typeof store.handler) {
+                handlerFns[store.name] = store.handler.bind(storeInstance);
+            } else {
+                if (!storeInstance[store.handler]) {
+                    var message = store.name + &#x27; does not have a method called &#x27; + store.handler;
+                    var meta = {
+                        store: store
+                    };
+                    return self.dispatcher._throwOrCallErrorHandler(message, &#x27;DISPATCH_INVALID_STORE_METHOD&#x27;, self.context, meta
+);
+                }
+                handlerFns[store.name] = storeInstance[store.handler].bind(storeInstance);
+            }
+        });
+        this.currentAction.execute(handlerFns);
+    } catch (e) {
+        throw e;
+    } finally {
+        debug(&#x27;finished &#x27; + actionName);
+        this.currentAction = null;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var dispatcher = require(&#x27;dispatchr&#x27;).createDispatcher({
+    stores: [ExampleStore]
+});
+
+var contextOptions = {};
+var dispatcherContext = dispatcher.createContext(contextOptions);
+
+dispatcherContext.<span class="apidocCodeKeywordSpan">dispatch</span>(&#x27;NAVIGATE&#x27;, {});
+// Action has been handled fully
+```
+
+## Differences from [Facebook&#x27;s Flux Dispatcher](https://github.com/facebook/flux/blob/master/src/Dispatcher.js)
+
+Dispatchr&#x27;s main goal is to facilitate server-side rendering of Flux
+applications while also working on the client-side to encourage code reuse. In
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.DispatcherContext.prototype.getStore" id="apidoc.element.dispatchr.DispatcherContext.prototype.getStore">
+        function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>getStore
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getStore(name) {
+    var storeName = this.dispatcher.getStoreName(name);
+    if (!this.storeInstances[storeName]) {
+        var Store = this.dispatcher.stores[storeName];
+        if (!Store) {
+            var message = &#x27;Store &#x27; + storeName + &#x27; was not registered.&#x27;;
+            var meta = {
+                storeName: storeName
+            };
+            return this.dispatcher._throwOrCallErrorHandler(message, &#x27;STORE_UNREGISTERED&#x27;, this.context, meta);
+        }
+        this.storeInstances[storeName] = new (this.dispatcher.stores[storeName])(this.dispatcherInterface);
+        if (this.rehydratedStoreState &#x26;&#x26; this.rehydratedStoreState[storeName]) {
+            var state = this.rehydratedStoreState[storeName];
+            if (this.storeInstances[storeName].rehydrate) {
+                this.storeInstances[storeName].rehydrate(state);
+            }
+            this.rehydratedStoreState[storeName] = null;
+        }
+    }
+    return this.storeInstances[storeName];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    try {
+allHandlers.forEach(function actionHandlersEach(store) {
+    if (handlerFns[store.name]) {
+        // Don&#x27;t call the default if the store has an explicit action handler
+        return;
+    }
+    var storeInstance = self.<span class="apidocCodeKeywordSpan">getStore</span>(store.name);
+    if (&#x27;function&#x27; === typeof store.handler) {
+        handlerFns[store.name] = store.handler.bind(storeInstance);
+    } else {
+        if (!storeInstance[store.handler]) {
+            var message = store.name + &#x27; does not have a method called &#x27; + store.handler;
+            var meta = {
+                store: store
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.DispatcherContext.prototype.rehydrate" id="apidoc.element.dispatchr.DispatcherContext.prototype.rehydrate">
+        function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>rehydrate
+        <span class="apidocSignatureSpan">(dispatcherState)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rehydrate(dispatcherState) {
+    var self = this;
+    if (dispatcherState.stores) {
+        Object.keys(dispatcherState.stores).forEach(function storeStateEach(storeName) {
+            self.rehydratedStoreState[storeName] = dispatcherState.stores[storeName];
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            };
+            return this.dispatcher._throwOrCallErrorHandler(message, &#x27;STORE_UNREGISTERED&#x27;, this.context, meta);
+        }
+        this.storeInstances[storeName] = new (this.dispatcher.stores[storeName])(this.dispatcherInterface);
+        if (this.rehydratedStoreState &#x26;&#x26; this.rehydratedStoreState[storeName]) {
+            var state = this.rehydratedStoreState[storeName];
+            if (this.storeInstances[storeName].rehydrate) {
+                this.storeInstances[storeName].<span class="apidocCodeKeywordSpan">rehydrate</span>(state);
+            }
+            this.rehydratedStoreState[storeName] = null;
+        }
+    }
+    return this.storeInstances[storeName];
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.DispatcherContext.prototype.waitFor" id="apidoc.element.dispatchr.DispatcherContext.prototype.waitFor">
+        function <span class="apidocSignatureSpan">dispatchr.DispatcherContext.prototype.</span>waitFor
+        <span class="apidocSignatureSpan">(stores, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function waitFor(stores, callback) {
+    if (!this.currentAction) {
+        var message = &#x27;waitFor called even though there is no action dispatching&#x27;;
+        var meta = {
+            stores: stores
+        };
+        return this.dispatcher._throwOrCallErrorHandler(message, &#x27;WAITFOR_NO_ACTION&#x27;, this.context, meta);
+    }
+    this.currentAction.waitFor(stores, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (!this.currentAction) {
+        var message = &#x27;waitFor called even though there is no action dispatching&#x27;;
+        var meta = {
+            stores: stores
+        };
+        return this.dispatcher._throwOrCallErrorHandler(message, &#x27;WAITFOR_NO_ACTION&#x27;, this.context, meta);
+    }
+    this.currentAction.<span class="apidocCodeKeywordSpan">waitFor</span>(stores, callback);
+};
+
+module.exports = DispatcherContext;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
