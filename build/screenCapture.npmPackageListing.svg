@@ -1,21 +1,21 @@
 <svg height="286" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="286" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-18 23:16:52 +0000    29759 bytes  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-18 23:16:52 +0000      378 bytes  CHANGELOG.md</tspan>
-<tspan x="10" y="58">  2.  2017-04-18 23:16:52 +0000      340 bytes  CONTRIBUTING.md</tspan>
-<tspan x="10" y="74">  3.  2017-04-18 23:16:52 +0000     1662 bytes  LICENSE.md</tspan>
-<tspan x="10" y="90">  4.  2017-04-18 23:16:52 +0000     3938 bytes  README.md</tspan>
-<tspan x="10" y="106">  5.  2017-04-18 23:16:52 +0000     1983 bytes  addons/BaseStore.js</tspan>
-<tspan x="10" y="122">  6.  2017-04-18 23:16:52 +0000     2398 bytes  addons/createStore.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-18 23:16:52 +0000      103 bytes  addons/index.js</tspan>
-<tspan x="10" y="154">  8.  2017-04-18 23:16:52 +0000      180 bytes  index.js</tspan>
-<tspan x="10" y="170">  9.  2017-04-18 23:16:52 +0000     2911 bytes  lib/Action.js</tspan>
-<tspan x="10" y="186"> 10.  2017-04-18 23:16:52 +0000     5773 bytes  lib/Dispatcher.js</tspan>
-<tspan x="10" y="202"> 11.  2017-04-18 23:16:52 +0000     6824 bytes  lib/DispatcherContext.js</tspan>
-<tspan x="10" y="218"> 12.  2017-04-18 23:16:52 +0000     2949 bytes  package.json</tspan>
-<tspan x="10" y="234"> 13.  2017-04-18 23:16:52 +0000      112 bytes  utils/BaseStore.js</tspan>
-<tspan x="10" y="250"> 14.  2017-04-18 23:16:52 +0000      116 bytes  utils/createStore.js</tspan>
-<tspan x="10" y="266"> 15.  2017-04-18 23:16:52 +0000       92 bytes  utils/index.js</tspan>
+<tspan x="10" y="26">  0.  2017-04-18 23:17:52 +0000    29759 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-18 23:17:52 +0000      378 bytes  CHANGELOG.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-18 23:17:52 +0000      340 bytes  CONTRIBUTING.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-18 23:17:52 +0000     1662 bytes  LICENSE.md</tspan>
+<tspan x="10" y="90">  4.  2017-04-18 23:17:52 +0000     3938 bytes  README.md</tspan>
+<tspan x="10" y="106">  5.  2017-04-18 23:17:52 +0000     1983 bytes  addons/BaseStore.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-18 23:17:52 +0000     2398 bytes  addons/createStore.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-18 23:17:52 +0000      103 bytes  addons/index.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-18 23:17:52 +0000      180 bytes  index.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-18 23:17:52 +0000     2911 bytes  lib/Action.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-18 23:17:52 +0000     5773 bytes  lib/Dispatcher.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-18 23:17:52 +0000     6824 bytes  lib/DispatcherContext.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-18 23:17:52 +0000     2949 bytes  package.json</tspan>
+<tspan x="10" y="234"> 13.  2017-04-18 23:17:52 +0000      112 bytes  utils/BaseStore.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-18 23:17:52 +0000      116 bytes  utils/createStore.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-18 23:17:52 +0000       92 bytes  utils/index.js</tspan>
 </text>
 </svg>
