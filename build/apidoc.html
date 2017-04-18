@@ -111,6 +111,12 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dispatchr.</span>Dispatcher</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dispatchr.</span>DispatcherContext.prototype</span>
 
         </li>
@@ -235,6 +241,19 @@
             <a class="apidocElementLiA" href="#apidoc.element.dispatchr.BaseStore.prototype.shouldDehydrate">
             function <span class="apidocSignatureSpan">dispatchr.BaseStore.prototype.</span>shouldDehydrate
             <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dispatchr.Dispatcher">module dispatchr.Dispatcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dispatchr.Dispatcher.createDispatcher">
+            function <span class="apidocSignatureSpan">dispatchr.Dispatcher.</span>createDispatcher
+            <span class="apidocSignatureSpan">(options)</span>
             </a>
 
         </li>
@@ -400,6 +419,8 @@ var dispatcherContext = dispatcher.createContext(contextOptions);
 dispatcherContext.dispatch(&#x27;NAVIGATE&#x27;, {});
 ...</pre></li>
     </ul>
+
+
 
 
 
@@ -764,6 +785,42 @@ Object.keys(self.storeInstances).forEach(function storeInstancesEach(storeName) 
 return {
     stores: stores
 };
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dispatchr.Dispatcher" id="apidoc.module.dispatchr.Dispatcher">module dispatchr.Dispatcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dispatchr.Dispatcher.createDispatcher" id="apidoc.element.dispatchr.Dispatcher.createDispatcher">
+        function <span class="apidocSignatureSpan">dispatchr.Dispatcher.</span>createDispatcher
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createDispatcher = function (options) {
+    return new Dispatcher(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Usage
+
+For a more detailed example, see our [example applications](../../examples).
+
+```js
+var ExampleStore = require(&#x27;./stores/ExampleStore.js&#x27;);
+var dispatcher = require(&#x27;dispatchr&#x27;).<span class="apidocCodeKeywordSpan">createDispatcher</span>({
+    stores: [ExampleStore]
+});
+
+var contextOptions = {};
+var dispatcherContext = dispatcher.createContext(contextOptions);
+
+dispatcherContext.dispatch(&#x27;NAVIGATE&#x27;, {});
 ...</pre></li>
     </ul>
 
